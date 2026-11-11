@@ -1,0 +1,23 @@
+library(webmania)
+a<-commandArgs(TRUE);mode<-a[[1]];base<-a[[2]];worker<-a[[3]];ca<-a[[4]];expected<-a[[5]]
+cfg<-wm_config(worker_path=worker,base_url=base,file_origins=base,ca_pem=paste(readLines(ca),collapse='\n'),timeout_ms=15000L)
+c<-wm_emitter_files_client(wm_issuer_token('synthetic-issuer'),cfg)
+op<-if(startsWith(mode,'html:'))strsplit(mode,':',fixed=TRUE)[[1]][[2]]else'file_get_nfse_pdf'
+task<-get(op,asNamespace('webmania'))(c,'00000000-0000-4000-8000-000000000001',wm_file_auth('issuer'));r<-wm_await(task)
+if(expected!='success'){stopifnot(is.null(r$value),wm_error_kind(r$error)==expected);wm_close(r$error);wm_close(task);wm_close(c);wm_close(cfg);quit(status=0)}
+stopifnot(is.null(r$error),!is.null(r$value));v<-r$value;wm_close(task);wm_close(c);wm_close(cfg)
+reject<-function(expr)stopifnot(inherits(try(force(expr),silent=TRUE),'try-error'))
+if(startsWith(mode,'html:')){
+ con<-file(a[[6]],'rb');exact<-readBin(con,'raw',n=file.info(a[[6]])$size);close(con)
+ stopifnot(wm_file_kind(v)=='Html',wm_file_status(v)==200L,wm_file_media_type(v)=='text/html',identical(wm_file_bytes(v),exact));wm_close(v)
+}else{
+ stopifnot(inherits(v,'NfsePdfPending'),wm_type(v)=='NfsePdfPending',wm_is_pending(v),wm_pending_status(v)==200L,wm_pending_media_type(v)=='application/json',!grepl('queued',format(v)))
+ reject(wm_file_bytes(v));reject(wm_reveal_location(v));reject(wm_file_status(v))
+ x<-wm_pending_value(v);y<-wm_pending_value(v);stopifnot(inherits(x,'api2_emitter_files.NfsePdfPending'),inherits(y,'api2_emitter_files.NfsePdfPending'))
+ expected_msg<-wm_text(as.raw(c(113,117,101,117,101,100,0,195,161,240,159,152,128)))
+ stopifnot(identical(unclass(wm_get(x,'msg')),unclass(expected_msg)));wm_set(x,'msg','mutated');wm_set_extension(x,'Case',wm_json('0'));wm_close(x)
+ stopifnot(identical(unclass(wm_get(y,'msg')),unclass(expected_msg)));before<-wm_to_json(y);wm_close(v);wm_close(v);stopifnot(wm_to_json(y)==before)
+ if(mode=='pending16')stopifnot(nchar(before,type='bytes')==16L*1024L*1024L)else stopifnot(wm_to_json(wm_get_extension(y,'big'))=='9007199254740995',wm_to_json(wm_get_extension(y,'tiny'))=='1.2300e-200',wm_to_json(wm_get_extension(y,'Case'))=='null',wm_to_json(wm_get_extension(y,'case'))=='[true,{"x":"extension"}]')
+ reject(wm_pending_status(v));reject(wm_pending_value(y));wm_close(y)
+}
+gc()

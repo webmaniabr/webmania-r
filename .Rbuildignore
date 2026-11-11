@@ -1,0 +1,9 @@
+^\.git$
+^scripts$
+^metadata$
+^dependency-lock\.json$
+^\.github$
+^examples$
+^tests/__pycache__$
+(^|/)\.DS_Store$
+(^|/)\._

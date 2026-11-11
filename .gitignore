@@ -1,0 +1,10 @@
+src/*.o
+src/*.so
+*.tar.gz
+*.Rcheck/
+src/backend/*.o
+__pycache__/
+
+# macOS metadata
+.DS_Store
+._*

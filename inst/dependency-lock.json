@@ -1,0 +1,28 @@
+{
+  "C_binary_archive_sha256": "c3da4235776531c90d2b3ca452478fe88ab9d2519d9d5aed28c38c72f3fec407",
+  "worker_sha256": "1d81d4dff57a8b233d2ce9316d201fd10b2740203d9890ef87a87144ea0d0f15",
+  "metadata_sha256": "12c59c586019661a80ef15af99afe152283e8c927cbd47dd1b2a740d313c87ec",
+  "contract_digest": "371a499f74012bb6b41f23642869dee4954e8394dcba7642edc701aedb3dd59e",
+  "R": "4.6.2",
+  "platform": "Linux arm64",
+  "libexec/webmania-native-worker": "1d81d4dff57a8b233d2ce9316d201fd10b2740203d9890ef87a87144ea0d0f15",
+  "C_source_files": {
+    "json.c": "7fc2f958ad9362bd6e9506daddcf2888e99e488c2857754d0ce3fdf3a3021f9e",
+    "runtime.c": "e7da105e48b0962eff98ccda75f0017ef5bd734a8a267155a60b3aa8c3e33934",
+    "generated.c": "db0379fb99554fc700963e8356ae01d711085a946318c6d449cbe4f805db68fb",
+    "shapes.c": "461ecf94cad4fcf41ef6d7afa393b679c17648ce1344b973685a380999fcf30b",
+    "internal.h": "bdf9c87dd2002343388c072d2394f15b87f5a62df8c8f7ed55814c0ecd856694"
+  },
+  "C_linkage": "Exact C SDK sources, separate translation units; glue includes only public headers.",
+  "C_public_headers": {
+    "core.h": "1a9436b334433ad7583df1de4d9ea5cc956ad5268d9981dfca56af45ab4dd194",
+    "operations.h": "d506f862578022276268fa8490868bdd6f4e2ba914fd71627998f397e476aa33",
+    "webmania.h": "60a982a6259e688973f768dcda312e0f4af7e7b8724ed42b9158e433d02dea29",
+    "models.h": "79e8225eb7c987990d18443f4a6641eeb2d583470a7d36ec5bb347892e148208"
+  },
+  "C_source_archive_sha256": "d401028a32394b3229b51b9f7f1f31c82a58d4e6dd4333be2722ac8b73b227bd",
+  "worker_rebuild": "Not rebuilt by R CMD INSTALL; the exact worker source and vendored Rust dependency are retained in the separately pinned C source artifact.",
+  "sourcekit_sha256": "8d91f5dbfe48217c417d66fd773cbdf6bde43cd89877d53a4814835f62abf4e4",
+  "rust_crate_sha256": "1836197146b2604e83cf57a9ea1ef53712a9e256d7e686e97947c84f08ad0c8b",
+  "wire_audit_sha256": "acaf25a4ccf20ad509b60abc15b6a593045f62fde04031db473048d1eb3633e2"
+}

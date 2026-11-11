@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "structs": 1111,
+  "fields": 7699,
+  "aliases": [
+    {
+      "module": "api2_nfcom_issuance",
+      "model": "NfcomDocumentedGroup2114",
+      "identifier": "substituicao_chave_nfcom_substituida",
+      "wire": "substituicao.chave_nfcom_substituida"
+    },
+    {
+      "module": "api2_nfcom_issuance",
+      "model": "NfcomDocumentedGroup2114",
+      "identifier": "substituicao_motivo",
+      "wire": "substituicao.motivo"
+    },
+    {
+      "module": "api2_nfcom_issuance",
+      "model": "NfcomDocumentedGroup2114",
+      "identifier": "substituicao_nf_referenciada",
+      "wire": "substituicao.nf_referenciada.*"
+    }
+  ],
+  "source_sha256": {
+    "api1_b2b.rs": "f382b0195c291a082c653759cc74db14d5c13fde1ca1ba1cad2f3e8ae137122e",
+    "api1_files.rs": "542c5896662e82b9aa4f5805ca0c7b1a9a2cf77263a751b255a780a87e2bacc4",
+    "api1_fiscal.rs": "abf4c86f9e80c20fc67231ecbbd018cf6bf7c620436ff4481758bb3d81cbb1b4",
+    "api2_cte_issuance.rs": "d300b9d9afd3284f0e79a2f393f61c82cb27093d5bc9f0c08431c8ede90b7e85",
+    "api2_dce_issuance.rs": "8a3d2b6f3e1b4db3410b5f9f32bcc37cddf83696f33ca89246e2c7dfc4701021",
+    "api2_emitter_files.rs": "ee77bad43789fc0ba2080338c97034eb5fd8a917f1851b6d067c37cc711e724f",
+    "api2_emitter_reads.rs": "944ddd1965594185c11f90ecc03be79bcf3d3fea8b0c6125e9808e200805fc3f",
+    "api2_mdfe_issuance.rs": "ba3bc7620dfcdc9772e519955bee342adb946f00414f9df6b915e34e40451d26",
+    "api2_monitor_documents.rs": "88f2fee309224e10232f4115135d3c6a42eddb07e563c9e7785ffa4f415dbc73",
+    "api2_monitor_management.rs": "2904f39acaf62d6bf22a2d6db0c19eb507952531238682d023bae32480bb6587",
+    "api2_monitor_reads.rs": "5c02d209e41cddd7b02a70c82133e8e9f8f5f41bacff2bf124c231eaa655d1bb",
+    "api2_nfcom_issuance.rs": "fbd7e3e7f8c0eb9ee46a9cf5f6f873d85de7894284b5932ca2ff1f4848f72d63",
+    "api2_nfse_issuance.rs": "58cc6ad20581fa28c5737a3a258e57d6656af84591e9eb9a8a84eb05d911ebdb",
+    "api2_reports.rs": "eb056119b84aa26282b25c514f219c444a65e6da4bf7aa7001452aa478716915",
+    "mod.rs": "b35c614ad3715b0c039f1479f8136176838925472db68422c31e18e9a1de1ea0"
+  },
+  "identity_and_wire_are_distinct": true,
+  "metadata_sha256": "12c59c586019661a80ef15af99afe152283e8c927cbd47dd1b2a740d313c87ec",
+  "backend_sha256": "1836197146b2604e83cf57a9ea1ef53712a9e256d7e686e97947c84f08ad0c8b"
+}

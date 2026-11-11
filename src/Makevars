@@ -1,0 +1,10 @@
+C_STD = C11
+PKG_CPPFLAGS = -I../inst/native/include -D_POSIX_C_SOURCE=200809L
+PKG_CFLAGS = -pthread
+PKG_LIBS = -pthread
+OBJECTS = generated00.o generated01.o generated02.o generated03.o generated04.o generated05.o generated06.o generated07.o generated08.o generated09.o generated10.o generated11.o runtime.o backend/json.o backend/runtime.o backend/generated.o backend/shapes.o
+all: $(SHLIB)
+# Exact C7 generated adapters use bounded compilation; runtime and shape
+# validation use normal R compiler flags. This does not change the C API.
+backend/generated.o: backend/generated.c
+	$(CC) $(ALL_CPPFLAGS) $(ALL_CFLAGS) -O0 -g0 -c $< -o $@

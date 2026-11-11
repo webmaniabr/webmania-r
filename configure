@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+if test "$(uname -s)" != Linux || test "$(uname -m)" != aarch64; then
+  echo 'webmania: this provisional package is qualified only for Linux arm64' >&2
+  exit 1
+fi

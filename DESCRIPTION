@@ -1,0 +1,14 @@
+Package: webmania
+Type: Package
+Title: Nominal Webmania Fiscal SDK
+Version: 0.1.0.9005
+Authors@R: person("Webmania", "Team", email = "sdk@webmania.com.br", role = c("aut", "cre"))
+Description: Nominal typed models and six scoped clients for the frozen
+    Webmania Fiscal API contract. Uses the public pinned C SDK and an isolated
+    native worker. This Linux arm64 candidate is provisional.
+License: file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.6.2)
+Imports: utils
+NeedsCompilation: yes
+SystemRequirements: Linux arm64, C11, POSIX threads
